@@ -30,13 +30,16 @@ async def apply(ctx):
 
     questions = [
         "Thank you for applying for the Community Moderator position in SRS, before we start please review the requirements. If you do not meet the requirements, please don’t reply to this message. If you don’t answer within 300 seconds the application will be cancelled.\n\nRequirements:\n- Must have been in the server for at least 30 days\n- Must be active\n- Must be over the age of 13\n\nLet’s start with the first question, what’s your Discord name and id?",
+        "Which position do you want to apply for?\n- Good Sirs (your gonna be rejected 99%)\n- Moderator\n- Supervisor",
         "For how long have you been a member of this server?",
         "How old are you?",
         "Why do you want to apply for this position?",
         "Do you have any prior experience in moderating? If so, please send a link too",
         "What are your hobbies?",
         "Will you actually moderate or do you just want the role?",
-        "Why do you think you should be accepted?"
+        "Why do you think you should be accepted?",
+        "A member is spamming. What will you do? (Tell them to use #bsat / timeout / ban / tell them to stop / other)",
+        "In which timezone are you?"
     ]
 
     answers = {}
@@ -73,7 +76,8 @@ async def apply(ctx):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.reply("pongy :3")
+    ping = round(bot.latency*1000)
+    await ctx.reply(f"pongy :3 {ping}")
 
 
 bot.run('no u')
